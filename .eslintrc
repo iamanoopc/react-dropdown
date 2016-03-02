@@ -3,7 +3,9 @@
   "extends": "airbnb",
   "rules": {
     "new-cap": 0,
+    "no-param-reassign": [2, {"props": false}],
     "no-trailing-spaces": 0,
+    "react/jsx-no-bind": 0,
     "react/prop-types": 0,
     "spaced-comment": 0
   }
