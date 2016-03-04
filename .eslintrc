@@ -2,12 +2,14 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
+    "arrow-body-style": 0,
     "new-cap": 0,
-    "no-param-reassign": [2, {"props": false}],
+    "no-param-reassign": 0,
     "no-trailing-spaces": 0,
     "prefer-template": 0,
     "react/jsx-no-bind": 0,
     "react/prop-types": 0,
+    "react/sort-comp": 0,
     "spaced-comment": 0
   }
 }
