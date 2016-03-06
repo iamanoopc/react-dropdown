@@ -24,3 +24,9 @@ References
 ---
 - [React Transform Boilerplate](https://github.com/gaearon/react-transform-boilerplate)
 - [React HMRE](https://github.com/danmartinez101/babel-preset-react-hmre)
+
+TODO
+---
+- Add classnames to example
+- Move root dir to app
+- Add reset
