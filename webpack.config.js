@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: [
     'webpack/hot/dev-server',
-    './src/entrypoint'
+    './app/entrypoint'
   ],
   output: {
     filename: 'bundle.js',
@@ -16,14 +16,14 @@ module.exports = {
       {
         test: /\.js$/,
         include: [
-          path.join(__dirname, 'src')
+          path.join(__dirname, 'app')
         ],
         loaders: ['babel', 'eslint']
       },
       {
         test: /\.scss$/,
         include: [
-          path.join(__dirname, 'src')
+          path.join(__dirname, 'app')
         ],
         loaders: ['style', 'css', 'postcss', 'sass']
       }

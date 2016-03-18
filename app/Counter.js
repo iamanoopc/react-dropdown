@@ -19,9 +19,9 @@ class Counter extends React.Component {
   }
 
   render() {
-    const { counter } = this.state;
+    const { className, counter } = this.state;
     return (
-      <div>
+      <div className={className}>
         <button
           onClick={this.handleClick}
           type="button"
