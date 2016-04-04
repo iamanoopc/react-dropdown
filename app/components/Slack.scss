@@ -6,17 +6,18 @@
   @include unstyledButton;
   cursor: pointer;
   flex-shrink: 0;
-  padding: 6px;
+  padding: 6px 0;
+  width: 30px;
 
   &:hover {
     :local(.channelActionIcon) {
-      color: $color-highlight;
+      color: $color-blue;
     }
   }
 
   &:local(.channelAction--active) {
     :local(.channelActionIcon) {
-      color: $color-highlight;
+      color: $color-blue;
     }
   }
 
@@ -25,18 +26,25 @@
   }
 }
 
+:local(.channelActionDivider) {
+  border-left: 1px solid $color-border;
+  margin-left: 9px;
+  margin-right: 15px;
+}
+
 :local(.channelActionIcon) {
-  color: $color-grayText;
+  color: $color-primary;
   font-size: 18px;
   transition: color 0.1s ease-in-out;
+
+  &:local(.channelActionIcon--secondary) {
+    color: $color-grayText;
+  }
 }
 
 :local(.channelActions) {
-  border-right: 1px solid $color-border;
   display: flex;
   flex-shrink: 0;
-  margin-right: 15px;
-  padding-right: 9px;
 }
 
 :local(.channelInfo) {
@@ -54,7 +62,7 @@
   transition: color 0.1s ease-in-out;
 
   &:hover {
-    color: $color-highlight;
+    color: $color-blue;
   }
 }
 
@@ -69,6 +77,10 @@
   background-color: $color-channels;
   flex-shrink: 0;
   width: 220px;
+}
+
+:local(.dropdownPanel) {
+  width: 265px;
 }
 
 :local(.messages) {
@@ -88,9 +100,34 @@
   padding: 0 20px;
 }
 
-:local(.messagesHeaderRight) {
-  display: flex;
-  flex-shrink: 0;
+:local(.moreIcon) {
+  display: inline-block;
+  font-size: 16px;
+  width: 24px;
+
+  &:local(.moreIcon--allFiles) {
+    color: $color-green;
+  }
+
+  &:local(.moreIcon--help) {
+    color: $color-red;
+  }
+
+  &:local(.moreIcon--teamDirectory) {
+    color: $color-red;
+  }
+
+  &:local(.moreIcon--whatsNew) {
+    color: $color-yellow;
+  }
+
+  &:local(.moreIcon--yourFiles) {
+    color: $color-blue;
+  }
+}
+
+:local(.morePanel) {
+  width: 220px;
 }
 
 :local(.notificationButton) {
@@ -154,11 +191,11 @@
   width: 275px;
 
   &:hover {
-    border-color: $color-highlight;
+    border-color: $color-blue;
   }
 
   &:local(.searchInputContainer--active) {
-    border-color: $color-highlight;
+    border-color: $color-blue;
   }
 }
 
