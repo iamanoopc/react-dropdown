@@ -23,17 +23,53 @@ class Channels extends React.Component {
               Clari
               <i className={classNames('Channels-teamMenuIcon', 'fa', 'fa-chevron-down')}/>
             </div>
-            <TooltipTrigger
-              type={TooltipTypes.NOTIFICATION_BUTTON}
+            <DropdownTrigger
+              activeClassName="Channels-notificationButton--active"
+              type={DropdownTypes.NOTIFICATIONS}
             >
-              <button
-                className="Channels-notificationButton"
-                type="button"
+              <TooltipTrigger
+                type={TooltipTypes.NOTIFICATIONS}
               >
-                <i className={classNames('Channels-notificationIcon', 'fa', 'fa-bell-o')}/>
-              </button>
-              <Tooltip text="Notifications"/>
-            </TooltipTrigger>
+                <button
+                  className="Channels-notificationButton"
+                  type="button"
+                >
+                  <i className={classNames('Channels-notificationIcon', 'fa', 'fa-bell-o')}/>
+                </button>
+                <Tooltip text="Notifications"/>
+              </TooltipTrigger>
+              <DropdownPanel
+                className="Channels-dropdownPanel"
+                dropdown={Immutable.Map({
+                  sections: Immutable.List([
+                    Immutable.Map({
+                      header: Immutable.Map({
+                        secondary: 'Snooze notifications:',
+                      }),
+                      items: Immutable.List([
+                        '20 minutes',
+                        '1 hour',
+                        '2 hours',
+                        '4 hours',
+                        '8 hours',
+                        '24 hours',
+                      ]),
+                    }),
+                    Immutable.Map({
+                      items: Immutable.List([
+                        'Do Not Disturb schedule...',
+                      ]),
+                    }),
+                    Immutable.Map({
+                      items: Immutable.List([
+                        <span>Settings for <strong>#datascience</strong>...</span>,
+                        'Your notification preferences...',
+                      ]),
+                    }),
+                  ]),
+                })}
+              />
+            </DropdownTrigger>
           </div>
           <DropdownPanel
             className="Channels-dropdownPanel"

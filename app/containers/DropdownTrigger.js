@@ -19,8 +19,9 @@ class DropdownTrigger extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(e) {
     const { dispatch, dropdown, type } = this.props;
+    e.stopPropagation();
     if (dropdown) {
       dispatch(hideDropdown());
     } else {

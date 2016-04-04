@@ -26,6 +26,14 @@
       color: white;
     }
   }
+
+  &.Channels-notificationButton--active {
+    opacity: 1;
+
+    .Channels-notificationIcon {
+      color: white;
+    }
+  }
 }
 
 .Channels-notificationIcon {
