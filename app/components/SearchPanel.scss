@@ -2,20 +2,20 @@
 @import '../mixins/dropdownPanel';
 
 :local(.body) {
-  color: #3a3a3a;
+  color: $color-text;
   font-size: 14px;
   margin-top: 8px;
 }
 
 :local(.header) {
-  color: #3a3a3a;
+  color: $color-text;
   flex-shrink: 0;
   font-size: 14px;
   font-weight: 900;
 }
 
 :local(.key) {
-  border: 1px solid #DEDEDE;
+  border: 1px solid $color-keyBorder;
   border-radius: 3px;
   box-shadow: 0 1px 0 0 #d4d4d4;
   display: inline-block;
@@ -25,7 +25,7 @@
 
 :local(.modifier) {
   background-image: linear-gradient(#e9f6f1, #ccecdf);
-  border: 1px solid #8cd5b7;
+  border: 1px solid $color-modifierBorder;
   border-radius: 3px;
   display: inline-block;
   padding: 0 2px;

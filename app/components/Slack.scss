@@ -10,13 +10,13 @@
 
   &:hover {
     :local(.channelActionIcon) {
-      color: #3aa3e3;
+      color: $color-highlight;
     }
   }
 
   &:local(.channelAction--active) {
     :local(.channelActionIcon) {
-      color: #3aa3e3;
+      color: $color-highlight;
     }
   }
 
@@ -26,13 +26,13 @@
 }
 
 :local(.channelActionIcon) {
-  color: #9e9ea6;
+  color: $color-grayText;
   font-size: 18px;
   transition: color 0.1s ease-in-out;
 }
 
 :local(.channelActions) {
-  border-right: 1px solid #e8e8e8;
+  border-right: 1px solid $color-border;
   display: flex;
   flex-shrink: 0;
   margin-right: 15px;
@@ -46,7 +46,7 @@
 }
 
 :local(.channelMembers) {
-  color: #9e9ea6;
+  color: $color-grayText;
   cursor: pointer;
   flex-shrink: 0;
   font-size: 13px;
@@ -54,7 +54,7 @@
   transition: color 0.1s ease-in-out;
 
   &:hover {
-    color: #3aa3e3;
+    color: $color-highlight;
   }
 }
 
@@ -66,7 +66,7 @@
 }
 
 :local(.channels) {
-  background-color: #4d394b;
+  background-color: $color-channels;
   flex-shrink: 0;
   width: 220px;
 }
@@ -80,7 +80,7 @@
 
 :local(.messagesHeader) {
   align-items: center;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid $color-border;
   display: flex;
   flex-shrink: 0;
   height: 61px;
@@ -111,7 +111,7 @@
 }
 
 :local(.notificationIcon) {
-  color: #a09a9f;
+  color: $color-channelIcon;
   font-size: 16px;
   transition: color 0.1s ease-in-out;
 }
@@ -121,7 +121,7 @@
 }
 
 :local(.searchIcon) {
-  color: #2c2d30;
+  color: $color-text;
   font-size: 16px;
   left: 8px;
   position: absolute;
@@ -131,7 +131,7 @@
 :local(.searchInput) {
   @include unstyledInput;
   bottom: 0;
-  color: #555459;
+  color: $color-primary;
   font-size: 15px;
   left: 30px;
   position: absolute;
@@ -144,7 +144,7 @@
 }
 
 :local(.searchInputContainer) {
-  border: 1px solid rgba(214, 214, 214, 0.61);
+  border: 1px solid $color-border;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(black, 0.075);
   display: flex;
@@ -154,11 +154,11 @@
   width: 275px;
 
   &:hover {
-    border-color: #439fe0;
+    border-color: $color-highlight;
   }
 
   &:local(.searchInputContainer--active) {
-    border-color: #439fe0;
+    border-color: $color-highlight;
   }
 }
 
@@ -172,7 +172,7 @@
 }
 
 :local(.teamMenu) {
-  background-color: #4d394b;
+  background-color: $color-channels;
   cursor: pointer;
   display: flex;
   height: 61px;
@@ -181,7 +181,7 @@
   transition: background-color 0.1s ease-in-out;
 
   &:hover {
-    background-color: #3e313c;
+    background-color: $color-channelsActive;
 
     :local(.teamMenuIcon) {
       color: white;
@@ -189,7 +189,7 @@
   }
 
   &:local(.teamMenu--active) {
-    background-color: #3e313c;
+    background-color: $color-channelsActive;
 
     :local(.teamMenuIcon) {
       color: white;
@@ -198,7 +198,7 @@
 }
 
 :local(.teamMenuIcon) {
-  color: #a09a9f;
+  color: $color-channelIcon;
   font-size: 8px;
   margin-left: 5px;
   transition: color 0.1s ease-in-out;

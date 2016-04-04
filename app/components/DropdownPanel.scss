@@ -10,14 +10,14 @@
 }
 
 :local(.menuHeaderPrimary) {
-  color: #555459;
+  color: $color-primary;
   flex-shrink: 0;
   font-size: 18px;
   font-weight: 900;
 }
 
 :local(.menuHeaderSecondary) {
-  color: #A0A0A2;
+  color: $color-menuSecondary;
   flex-shrink: 0;
   font-size: 15px;
   font-weight: 500;
@@ -25,7 +25,7 @@
 
 :local(.menuItem) {
   border-radius: 4px;
-  color: #2c2d30;
+  color: $color-text;
   cursor: pointer;
   flex-shrink: 0;
   font-size: 15px;
@@ -35,7 +35,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: #3aa3e3;
+    background-color: $color-highlight;
     color: white;
     text-shadow: 0 1px 0 rgba(black, 0.1);
   }
@@ -48,7 +48,7 @@
   padding: 12px 0;
 
   &:not(:first-child) {
-    border-top: 1px solid rgba(#E6E6E6, 0.8);
+    border-top: 1px solid $color-menuBorder;
   }
 }
 
