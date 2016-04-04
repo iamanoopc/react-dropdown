@@ -1,0 +1,79 @@
+@import '../variables';
+@import '../mixins/unstyledButton';
+
+:local(.channels) {
+  background-color: #4d394b;
+  flex-shrink: 0;
+  width: 220px;
+}
+
+:local(.messages) {
+  flex-grow: 1;
+  min-width: 1px;
+}
+
+:local(.notificationButton) {
+  @include unstyledButton;
+  align-self: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.1s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+
+    :local(.notificationIcon) {
+      color: white;
+    }
+  }
+}
+
+:local(.notificationIcon) {
+  color: #a09a9f;
+  font-size: 16px;
+  transition: color 0.1s ease-in-out;
+}
+
+:local(.slack) {
+  bottom: 0;
+  left: 0;
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+:local(.teamMenu) {
+  background-color: #4d394b;
+  cursor: pointer;
+  display: flex;
+  height: 61px;
+  justify-content: space-between;
+  padding: 0 16px;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: #3e313c;
+
+    :local(.teamMenuIcon) {
+      color: white;
+    }
+  }
+}
+
+:local(.teamMenuIcon) {
+  color: #a09a9f;
+  font-size: 8px;
+  margin-left: 5px;
+  transition: color 0.1s ease-in-out;
+}
+
+:local(.teamName) {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: bold;
+}

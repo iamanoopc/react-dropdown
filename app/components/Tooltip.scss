@@ -1,0 +1,10 @@
+@import '../variables';
+
+:local(.tooltip) {
+  background-color: black;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 12px;
+}

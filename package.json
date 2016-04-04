@@ -1,5 +1,5 @@
 {
-  "name": "react-sass-boilerplate",
+  "name": "react-dropdown",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -31,7 +31,14 @@
   "dependencies": {
     "babel-polyfill": "^6.5.0",
     "classnames": "^2.2.0",
+    "immutable": "^3.7.6",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-addons-css-transition-group": "^0.14.8",
+    "react-dom": "^0.14.0",
+    "react-redux": "^4.4.1",
+    "react-tether": "^0.3.3",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
   }
 }

@@ -1,0 +1,24 @@
+@import '../variables';
+@import '../mixins/placeholderClass';
+
+:local(.tooltipTransitionGroup) {
+  @include placeholderClass;
+}
+
+:local(.tooltipTransitionGroup-enter) {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+
+  &:local(.tooltipTransitionGroup-enter-active) {
+    opacity: 1;
+  }
+}
+
+:local(.tooltipTransitionGroup-leave) {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+
+  &:local(.tooltipTransitionGroup-leave-active) {
+    opacity: 0;
+  }
+}

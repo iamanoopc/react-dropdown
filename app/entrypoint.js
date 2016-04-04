@@ -1,7 +1,15 @@
 import 'babel-polyfill';
 import './reset.scss';
-import Counter from './Counter';
+import './global.scss';
+import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SlackContainer from './containers/SlackContainer';
+import store from './store';
 
-ReactDOM.render(<Counter/>, document.getElementById('content'));
+ReactDOM.render(
+  <Provider store={store}>
+    <SlackContainer/>
+  </Provider>,
+  document.getElementById('content')
+);

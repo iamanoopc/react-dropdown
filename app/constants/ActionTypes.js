@@ -1,0 +1,4 @@
+export default {
+  HIDE_TOOLTIP: 'HIDE_TOOLTIP',
+  SHOW_TOOLTIP: 'SHOW_TOOLTIP',
+};
