@@ -1,4 +1,4 @@
-var autoprefixer = require('autoprefixer');
+var common = require('./webpack.config.common');
 var path = require('path');
 var webpack = require('webpack');
 
@@ -13,25 +13,8 @@ module.exports = {
   },
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        include: [
-          path.join(__dirname, 'app')
-        ],
-        loaders: ['babel', 'eslint']
-      },
-      {
-        test: /\.scss$/,
-        include: [
-          path.join(__dirname, 'app')
-        ],
-        loaders: [
-          'style',
-          'css',
-          'postcss',
-          'sass'
-        ]
-      }
+      common.jsLoader,
+      common.cssLoader,
     ]
   },
   devtool: 'eval',
@@ -44,5 +27,5 @@ module.exports = {
     inline: true,
     historyApiFallback: true
   },
-  postcss: [autoprefixer]
+  postcss: common.postcss
 };
