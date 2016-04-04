@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins/dropdownPanel';
 
 :local(.menuHeader) {
   display: flex;
@@ -52,10 +53,7 @@
 }
 
 :local(.panel) {
-  background-color: white;
-  border: 1px solid rgba(black, 0.15);
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(black, 0.12);
+  @include dropdownPanel;
   display: flex;
   flex-direction: column;
   width: 265px;

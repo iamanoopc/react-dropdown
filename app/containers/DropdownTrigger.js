@@ -8,6 +8,11 @@ import TetherComponent from 'react-tether';
 import styles from './DropdownTrigger.scss';
 
 class DropdownTrigger extends React.Component {
+  static defaultProps = {
+    attachment: 'top left',
+    targetAttachment: 'bottom left',
+  };
+
   constructor(props) {
     super(props);
     
@@ -28,8 +33,10 @@ class DropdownTrigger extends React.Component {
   render() {
     const {
       activeClassName,
+      attachment,
       children,
       dropdown,
+      targetAttachment,
       type,
     } = this.props;
 
@@ -38,13 +45,13 @@ class DropdownTrigger extends React.Component {
 
     return (
       <TetherComponent
-        attachment="bottom left"
+        attachment={attachment}
         constraints={[{
           to: 'window',
           attachment: 'together',
           pin: true,
         }]}
-        targetAttachment="top left"
+        targetAttachment={targetAttachment}
       >
         {React.cloneElement(childArray[0], {
           className: classNames(childArray[0].props.className, active && activeClassName),

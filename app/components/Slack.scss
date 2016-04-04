@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins/unstyledButton';
+@import '../mixins/unstyledInput';
 
 :local(.channelAction) {
   @include unstyledButton;
@@ -31,8 +32,11 @@
 }
 
 :local(.channelActions) {
+  border-right: 1px solid #e8e8e8;
   display: flex;
   flex-shrink: 0;
+  margin-right: 15px;
+  padding-right: 9px;
 }
 
 :local(.channelInfo) {
@@ -76,10 +80,17 @@
 
 :local(.messagesHeader) {
   align-items: center;
+  border-bottom: 1px solid #e8e8e8;
   display: flex;
   flex-shrink: 0;
   height: 61px;
+  justify-content: space-between;
   padding: 0 20px;
+}
+
+:local(.messagesHeaderRight) {
+  display: flex;
+  flex-shrink: 0;
 }
 
 :local(.notificationButton) {
@@ -103,6 +114,52 @@
   color: #a09a9f;
   font-size: 16px;
   transition: color 0.1s ease-in-out;
+}
+
+:local(.search) {
+  display: flex;
+}
+
+:local(.searchIcon) {
+  color: #2c2d30;
+  font-size: 16px;
+  left: 8px;
+  position: absolute;
+  top: 9px;
+}
+
+:local(.searchInput) {
+  @include unstyledInput;
+  bottom: 0;
+  color: #555459;
+  font-size: 15px;
+  left: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &::placeholder {
+    color: #9e9ea6;
+  }
+}
+
+:local(.searchInputContainer) {
+  border: 1px solid rgba(214, 214, 214, 0.61);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(black, 0.075);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 34px;
+  width: 275px;
+
+  &:hover {
+    border-color: #439fe0;
+  }
+
+  &:local(.searchInputContainer--active) {
+    border-color: #439fe0;
+  }
 }
 
 :local(.slack) {

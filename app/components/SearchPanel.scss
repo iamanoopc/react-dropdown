@@ -1,0 +1,41 @@
+@import '../variables';
+@import '../mixins/dropdownPanel';
+
+:local(.body) {
+  color: #3a3a3a;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+:local(.header) {
+  color: #3a3a3a;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+:local(.key) {
+  border: 1px solid #DEDEDE;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 #d4d4d4;
+  display: inline-block;
+  line-height: 13px;
+  padding: 0 2px;
+}
+
+:local(.modifier) {
+  background-image: linear-gradient(#e9f6f1, #ccecdf);
+  border: 1px solid #8cd5b7;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0 2px;
+}
+
+:local(.panel) {
+  @include dropdownPanel;
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  padding: 18px;
+  width: 360px;
+}

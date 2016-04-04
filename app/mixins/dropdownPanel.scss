@@ -1,0 +1,8 @@
+@import '../variables';
+
+@mixin dropdownPanel {
+  background-color: white;
+  border: 1px solid rgba(black, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(black, 0.12);
+}

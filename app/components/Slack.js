@@ -4,6 +4,7 @@ import DropdownTrigger from '../containers/DropdownTrigger';
 import DropdownTypes from '../constants/DropdownTypes';
 import Immutable from 'immutable';
 import React from 'react';
+import SearchPanel from './SearchPanel';
 import styles from './Slack.scss';
 import Tooltip from './Tooltip';
 import TooltipTrigger from '../containers/TooltipTrigger';
@@ -92,75 +93,94 @@ class Slack extends React.Component {
                 <Tooltip text="View member list (1/1 online)"/>
               </TooltipTrigger>
             </div>
-            <div className={styles.channelActions}>
-              <TooltipTrigger
-                type={TooltipTypes.CHANNEL_CALL}
-              >
-                <button
-                  className={styles.channelAction}
-                  type="button"
-                >
-                  <i className={classNames(styles.channelActionIcon, 'fa', 'fa-phone')}/>
-                </button>
-                <Tooltip text="Start a call in this channel"/>
-              </TooltipTrigger>
-              <DropdownTrigger
-                activeClassName={styles['channelAction--active']}
-                attachment="bottom center"
-                type={DropdownTypes.CHANNEL_SETTINGS}
-              >
+            <div className={styles.messagesHeaderRight}>
+              <div className={styles.channelActions}>
                 <TooltipTrigger
-                  type={TooltipTypes.CHANNEL_SETTINGS}
+                  type={TooltipTypes.CHANNEL_CALL}
                 >
                   <button
                     className={styles.channelAction}
                     type="button"
                   >
-                    <i className={classNames(styles.channelActionIcon, 'fa', 'fa-gear')}/>
+                    <i className={classNames(styles.channelActionIcon, 'fa', 'fa-phone')}/>
                   </button>
-                  <Tooltip text="Channel Settings"/>
+                  <Tooltip text="Start a call in this channel"/>
                 </TooltipTrigger>
-                <DropdownPanel
-                  dropdown={Immutable.Map({
-                    sections: Immutable.List([
-                      Immutable.Map({
-                        items: Immutable.List([
-                          'View channel details',
-                          'Invite team members to join...',
-                          'Additional options...',
-                        ]),
-                      }),
-                      Immutable.Map({
-                        items: Immutable.List([
-                          'Notification preferences...',
-                          'Mute #test',
-                        ]),
-                      }),
-                      Immutable.Map({
-                        items: Immutable.List([
-                          'Add an app or custom integration',
-                        ]),
-                      }),
-                      Immutable.Map({
-                        items: Immutable.List([
-                          'Leave #test',
-                        ]),
-                      }),
-                    ]),
-                  })}
-                />
-              </DropdownTrigger>
-              <TooltipTrigger
-                type={TooltipTypes.CHANNEL_DETAILS}
-              >
-                <button
-                  className={styles.channelAction}
-                  type="button"
+                <DropdownTrigger
+                  activeClassName={styles['channelAction--active']}
+                  type={DropdownTypes.CHANNEL_SETTINGS}
                 >
-                  <i className={classNames(styles.channelActionIcon, 'fa', 'fa-list-alt')}/>
-                </button>
-                <Tooltip text="Show Channel Details"/>
-              </TooltipTrigger>
+                  <TooltipTrigger
+                    type={TooltipTypes.CHANNEL_SETTINGS}
+                  >
+                    <button
+                      className={styles.channelAction}
+                      type="button"
+                    >
+                      <i className={classNames(styles.channelActionIcon, 'fa', 'fa-gear')}/>
+                    </button>
+                    <Tooltip text="Channel Settings"/>
+                  </TooltipTrigger>
+                  <DropdownPanel
+                    dropdown={Immutable.Map({
+                      sections: Immutable.List([
+                        Immutable.Map({
+                          items: Immutable.List([
+                            'View channel details',
+                            'Invite team members to join...',
+                            'Additional options...',
+                          ]),
+                        }),
+                        Immutable.Map({
+                          items: Immutable.List([
+                            'Notification preferences...',
+                            'Mute #test',
+                          ]),
+                        }),
+                        Immutable.Map({
+                          items: Immutable.List([
+                            'Add an app or custom integration',
+                          ]),
+                        }),
+                        Immutable.Map({
+                          items: Immutable.List([
+                            'Leave #test',
+                          ]),
+                        }),
+                      ]),
+                    })}
+                  />
+                </DropdownTrigger>
+                <TooltipTrigger
+                  type={TooltipTypes.CHANNEL_DETAILS}
+                >
+                  <button
+                    className={styles.channelAction}
+                    type="button"
+                  >
+                    <i className={classNames(styles.channelActionIcon, 'fa', 'fa-list-alt')}/>
+                  </button>
+                  <Tooltip text="Show Channel Details"/>
+                </TooltipTrigger>
+              </div>
+              <div className={styles.search}>
+                <DropdownTrigger
+                  activeClassName={styles['searchInputContainer--active']}
+                  attachment="top right"
+                  targetAttachment="bottom right"
+                  type={DropdownTypes.SEARCH}
+                >
+                  <div className={styles.searchInputContainer}>
+                    <input
+                      className={styles.searchInput}
+                      placeholder="Search"
+                      type="text"
+                    />
+                    <i className={classNames(styles.searchIcon, 'fa', 'fa-search')}/>
+                  </div>
+                  <SearchPanel/>
+                </DropdownTrigger>
+              </div>
             </div>
           </div>
         </div>
