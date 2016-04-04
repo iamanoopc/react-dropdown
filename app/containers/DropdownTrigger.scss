@@ -1,0 +1,24 @@
+@import '../variables';
+@import '../mixins/placeholderClass';
+
+:local(.dropdownTransitionGroup) {
+  @include placeholderClass;
+}
+
+:local(.dropdownTransitionGroup-enter) {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+
+  &:local(.dropdownTransitionGroup-enter-active) {
+    opacity: 1;
+  }
+}
+
+:local(.dropdownTransitionGroup-leave) {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+
+  &:local(.dropdownTransitionGroup-leave-active) {
+    opacity: 0;
+  }
+}

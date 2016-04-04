@@ -4,7 +4,6 @@ import Immutable from 'immutable';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TetherComponent from 'react-tether';
-import Tooltip from '../components/Tooltip';
 import styles from './TooltipTrigger.scss';
 
 class TooltipTrigger extends React.Component {
@@ -30,6 +29,7 @@ class TooltipTrigger extends React.Component {
 
   render() {
     const { children, tooltip, type } = this.props;
+    const childArray = React.Children.toArray(children);
     return (
       <TetherComponent
         attachment="top center"
@@ -39,7 +39,7 @@ class TooltipTrigger extends React.Component {
           pin: true,
         }]}
       >
-        {React.cloneElement(children, {
+        {React.cloneElement(childArray[0], {
           onMouseEnter: this.handleMouseEnter,
           onMouseLeave: this.handleMouseLeave,
         })}
@@ -48,7 +48,7 @@ class TooltipTrigger extends React.Component {
           transitionLeaveTimeout={100}
           transitionName={styles.tooltipTransitionGroup}
         >
-          {tooltip && tooltip.get('type') === type && <Tooltip text={tooltip.get('text')}/>}
+          {tooltip && tooltip.get('type') === type && childArray[1]}
         </ReactCSSTransitionGroup>
       </TetherComponent>
     );
