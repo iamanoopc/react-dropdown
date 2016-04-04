@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { hideDropdown, showDropdown } from '../actions';
 import Immutable from 'immutable';
@@ -25,18 +26,28 @@ class DropdownTrigger extends React.Component {
   }
 
   render() {
-    const { children, dropdown, type } = this.props;
+    const {
+      activeClassName,
+      children,
+      dropdown,
+      type,
+    } = this.props;
+
     const childArray = React.Children.toArray(children);
+    const active = dropdown && dropdown.get('type') === type;
+
     return (
       <TetherComponent
-        attachment="top center"
+        attachment="bottom left"
         constraints={[{
           to: 'window',
           attachment: 'together',
           pin: true,
         }]}
+        targetAttachment="top left"
       >
         {React.cloneElement(childArray[0], {
+          className: classNames(childArray[0].props.className, active && activeClassName),
           onClick: this.handleClick,
         })}
         <ReactCSSTransitionGroup
@@ -44,7 +55,7 @@ class DropdownTrigger extends React.Component {
           transitionLeaveTimeout={100}
           transitionName={styles.dropdownTransitionGroup}
         >
-          {dropdown && dropdown.get('type') === type && childArray[1]}
+          {active && childArray[1]}
         </ReactCSSTransitionGroup>
       </TetherComponent>
     );

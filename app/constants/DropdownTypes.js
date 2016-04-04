@@ -1,3 +1,4 @@
 export default {
+  CHANNEL_SETTINGS: 'CHANNEL_SETTINGS',
   TEAM_MENU: 'TEAM_MENU',
 };

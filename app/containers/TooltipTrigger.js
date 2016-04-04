@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { hideTooltip, showTooltip } from '../actions';
 import Immutable from 'immutable';
@@ -15,10 +16,9 @@ class TooltipTrigger extends React.Component {
   }
   
   handleMouseEnter() {
-    const { dispatch, text, type } = this.props;
+    const { dispatch, type } = this.props;
     dispatch(showTooltip(Immutable.Map({
       type,
-      text,
     })));
   }
 
@@ -28,8 +28,17 @@ class TooltipTrigger extends React.Component {
   }
 
   render() {
-    const { children, tooltip, type } = this.props;
+    const {
+      children,
+      className,
+      dropdown,
+      onClick,
+      tooltip,
+      type,
+    } = this.props;
+
     const childArray = React.Children.toArray(children);
+
     return (
       <TetherComponent
         attachment="top center"
@@ -40,6 +49,8 @@ class TooltipTrigger extends React.Component {
         }]}
       >
         {React.cloneElement(childArray[0], {
+          className: classNames(childArray[0].props.className, className),
+          onClick,
           onMouseEnter: this.handleMouseEnter,
           onMouseLeave: this.handleMouseLeave,
         })}
@@ -48,7 +59,7 @@ class TooltipTrigger extends React.Component {
           transitionLeaveTimeout={100}
           transitionName={styles.tooltipTransitionGroup}
         >
-          {tooltip && tooltip.get('type') === type && childArray[1]}
+          {tooltip && tooltip.get('type') === type && !dropdown && childArray[1]}
         </ReactCSSTransitionGroup>
       </TetherComponent>
     );
@@ -56,5 +67,6 @@ class TooltipTrigger extends React.Component {
 }
 
 export default connect(state => ({
+  dropdown: state.get('dropdown'),
   tooltip: state.get('tooltip'),
 }))(TooltipTrigger);

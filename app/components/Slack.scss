@@ -1,6 +1,66 @@
 @import '../variables';
 @import '../mixins/unstyledButton';
 
+:local(.channelAction) {
+  @include unstyledButton;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 6px;
+
+  &:hover {
+    :local(.channelActionIcon) {
+      color: #3aa3e3;
+    }
+  }
+
+  &:local(.channelAction--active) {
+    :local(.channelActionIcon) {
+      color: #3aa3e3;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: 4px;
+  }
+}
+
+:local(.channelActionIcon) {
+  color: #9e9ea6;
+  font-size: 18px;
+  transition: color 0.1s ease-in-out;
+}
+
+:local(.channelActions) {
+  display: flex;
+  flex-shrink: 0;
+}
+
+:local(.channelInfo) {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+:local(.channelMembers) {
+  color: #9e9ea6;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 13px;
+  margin-top: 3px;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: #3aa3e3;
+  }
+}
+
+:local(.channelName) {
+  color: #2c2d30;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
 :local(.channels) {
   background-color: #4d394b;
   flex-shrink: 0;
@@ -8,8 +68,18 @@
 }
 
 :local(.messages) {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   min-width: 1px;
+}
+
+:local(.messagesHeader) {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  height: 61px;
+  padding: 0 20px;
 }
 
 :local(.notificationButton) {
@@ -54,6 +124,14 @@
   transition: background-color 0.1s ease-in-out;
 
   &:hover {
+    background-color: #3e313c;
+
+    :local(.teamMenuIcon) {
+      color: white;
+    }
+  }
+
+  &:local(.teamMenu--active) {
     background-color: #3e313c;
 
     :local(.teamMenuIcon) {
