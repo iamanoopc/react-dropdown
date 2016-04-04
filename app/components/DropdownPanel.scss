@@ -1,7 +1,13 @@
 @import '../variables';
-@import '../mixins/dropdownPanel';
+@import '../mixins/whitePanel';
 
-:local(.menuHeader) {
+.DropdownPanel {
+  @include whitePanel;
+  display: flex;
+  flex-direction: column;
+}
+
+.DropdownPanel-menuHeader {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -9,21 +15,21 @@
   padding: 0 12px;
 }
 
-:local(.menuHeaderPrimary) {
+.DropdownPanel-menuHeaderPrimary {
   color: $color-primary;
   flex-shrink: 0;
   font-size: 18px;
   font-weight: 900;
 }
 
-:local(.menuHeaderSecondary) {
+.DropdownPanel-menuHeaderSecondary {
   color: $color-menuSecondary;
   flex-shrink: 0;
   font-size: 15px;
   font-weight: 500;
 }
 
-:local(.menuItem) {
+.DropdownPanel-menuItem {
   border-radius: 4px;
   color: $color-text;
   cursor: pointer;
@@ -41,7 +47,7 @@
   }
 }
 
-:local(.menuSection) {
+.DropdownPanel-menuSection {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -50,10 +56,4 @@
   &:not(:first-child) {
     border-top: 1px solid $color-menuBorder;
   }
-}
-
-:local(.panel) {
-  @include dropdownPanel;
-  display: flex;
-  flex-direction: column;
 }

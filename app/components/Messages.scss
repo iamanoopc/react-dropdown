@@ -1,0 +1,139 @@
+@import '../variables';
+@import '../mixins/unstyledButton';
+@import '../mixins/unstyledInput';
+
+.Messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.Messages-channelAction {
+  @include unstyledButton;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 6px 0;
+  width: 30px;
+
+  &:hover {
+    .Messages-channelActionIcon {
+      color: $color-blue;
+    }
+  }
+
+  &.Messages-channelAction--active {
+    .Messages-channelActionIcon {
+      color: $color-blue;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: 4px;
+  }
+}
+
+.Messages-channelActionDivider {
+  border-left: 1px solid $color-border;
+  margin-left: 9px;
+  margin-right: 15px;
+}
+
+.Messages-channelActionIcon {
+  color: $color-primary;
+  font-size: 18px;
+  transition: color 0.1s ease-in-out;
+
+  &.Messages-channelActionIcon--secondary {
+    color: $color-grayText;
+  }
+}
+
+.Messages-channelActions {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.Messages-channelInfo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.Messages-channelMembers {
+  color: $color-grayText;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 13px;
+  margin-top: 3px;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.Messages-channelName {
+  color: #2c2d30;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.Messages-dropdownPanel {
+  width: 265px;
+}
+
+.Messages-header {
+  align-items: center;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  flex-shrink: 0;
+  height: 61px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.Messages-search {
+  display: flex;
+}
+
+.Messages-searchIcon {
+  color: $color-text;
+  font-size: 16px;
+  left: 8px;
+  position: absolute;
+  top: 9px;
+}
+
+.Messages-searchInput {
+  @include unstyledInput;
+  bottom: 0;
+  color: $color-primary;
+  font-size: 15px;
+  left: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &::placeholder {
+    color: $color-grayText;
+  }
+}
+
+.Messages-searchInputContainer {
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(black, 0.075);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 34px;
+  width: 275px;
+
+  &:hover {
+    border-color: $color-blue;
+  }
+
+  &.Messages-searchInputContainer--active {
+    border-color: $color-blue;
+  }
+}

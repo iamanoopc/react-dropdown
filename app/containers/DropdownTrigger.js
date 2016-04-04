@@ -1,3 +1,4 @@
+import './DropdownTrigger.scss';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { hideDropdown, showDropdown } from '../actions';
@@ -5,7 +6,6 @@ import Immutable from 'immutable';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TetherComponent from 'react-tether';
-import styles from './DropdownTrigger.scss';
 
 class DropdownTrigger extends React.Component {
   static defaultProps = {
@@ -60,7 +60,7 @@ class DropdownTrigger extends React.Component {
         <ReactCSSTransitionGroup
           transitionEnterTimeout={100}
           transitionLeaveTimeout={100}
-          transitionName={styles.dropdownTransitionGroup}
+          transitionName="DropdownTrigger-dropdownTransitionGroup"
         >
           {active && childArray[1]}
         </ReactCSSTransitionGroup>

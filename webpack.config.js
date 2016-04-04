@@ -25,7 +25,12 @@ module.exports = {
         include: [
           path.join(__dirname, 'app')
         ],
-        loaders: ['style', 'css?localIdentName=react-dropdown-[name]-[local]', 'postcss', 'sass']
+        loaders: [
+          'style',
+          'css',
+          'postcss',
+          'sass'
+        ]
       }
     ]
   },

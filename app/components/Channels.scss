@@ -1,0 +1,77 @@
+@import '../variables';
+@import '../mixins/unstyledButton';
+@import '../mixins/unstyledInput';
+
+.Channels {
+  background-color: $color-channels;
+  width: 220px;
+}
+
+.Channels-dropdownPanel {
+  width: 265px;
+}
+
+.Channels-notificationButton {
+  @include unstyledButton;
+  align-self: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.1s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+
+    .Channels-notificationIcon {
+      color: white;
+    }
+  }
+}
+
+.Channels-notificationIcon {
+  color: $color-channelIcon;
+  font-size: 16px;
+  transition: color 0.1s ease-in-out;
+}
+
+.Channels-teamMenu {
+  background-color: $color-channels;
+  cursor: pointer;
+  display: flex;
+  height: 61px;
+  justify-content: space-between;
+  padding: 0 16px;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: $color-channelsActive;
+
+    .Channels-teamMenuIcon {
+      color: white;
+    }
+  }
+
+  &.Channels-teamMenu--active {
+    background-color: $color-channelsActive;
+
+    .Channels-teamMenuIcon {
+      color: white;
+    }
+  }
+}
+
+.Channels-teamMenuIcon {
+  color: $color-channelIcon;
+  font-size: 8px;
+  margin-left: 5px;
+  transition: color 0.1s ease-in-out;
+}
+
+.Channels-teamName {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: bold;
+}

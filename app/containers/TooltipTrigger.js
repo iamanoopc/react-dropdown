@@ -1,3 +1,4 @@
+import './TooltipTrigger.scss';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { hideTooltip, showTooltip } from '../actions';
@@ -5,7 +6,6 @@ import Immutable from 'immutable';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TetherComponent from 'react-tether';
-import styles from './TooltipTrigger.scss';
 
 class TooltipTrigger extends React.Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class TooltipTrigger extends React.Component {
         <ReactCSSTransitionGroup
           transitionEnterTimeout={100}
           transitionLeaveTimeout={100}
-          transitionName={styles.tooltipTransitionGroup}
+          transitionName="TooltipTrigger-tooltipTransitionGroup"
         >
           {tooltip && tooltip.get('type') === type && !dropdown && childArray[1]}
         </ReactCSSTransitionGroup>

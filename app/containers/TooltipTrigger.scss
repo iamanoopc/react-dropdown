@@ -1,24 +1,19 @@
 @import '../variables';
-@import '../mixins/placeholderClass';
 
-:local(.tooltipTransitionGroup) {
-  @include placeholderClass;
-}
-
-:local(.tooltipTransitionGroup-enter) {
+.TooltipTrigger-tooltipTransitionGroup-enter {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
 
-  &:local(.tooltipTransitionGroup-enter-active) {
+  &.TooltipTrigger-tooltipTransitionGroup-enter-active {
     opacity: 1;
   }
 }
 
-:local(.tooltipTransitionGroup-leave) {
+.TooltipTrigger-tooltipTransitionGroup-leave {
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
 
-  &:local(.tooltipTransitionGroup-leave-active) {
+  &.TooltipTrigger-tooltipTransitionGroup-leave-active {
     opacity: 0;
   }
 }

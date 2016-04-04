@@ -1,0 +1,40 @@
+@import '../variables';
+
+.DropdownPanel {
+  &.MorePanel {
+    width: 220px;
+
+    .DropdownPanel-menuItem {
+      &:hover {
+        background-color: $color-moreMenuItem;
+        color: $color-text;
+      }
+    }
+  }
+}
+
+.MorePanel-icon {
+  display: inline-block;
+  font-size: 14px;
+  width: 24px;
+
+  &.MorePanel-icon--allFiles {
+    color: $color-green;
+  }
+
+  &.MorePanel-icon--help {
+    color: $color-red;
+  }
+
+  &.MorePanel-icon--teamDirectory {
+    color: $color-red;
+  }
+
+  &.MorePanel-icon--whatsNew {
+    color: $color-yellow;
+  }
+
+  &.MorePanel-icon--yourFiles {
+    color: $color-blue;
+  }
+}
